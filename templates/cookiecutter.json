@@ -1,0 +1,4 @@
+{
+  "monitoring_name": "default_name",
+  "schedule_interval": "@daily"
+}
