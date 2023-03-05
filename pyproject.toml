@@ -10,6 +10,8 @@ packages = [{include = "airflow_submodule"}]
 python = "^3.10"
 apache-airflow = "^2.5.1"
 cookiecutter = "^2.1.1"
+pandas = "^1.5.3"
+pyathena = "^2.23.0"
 
 
 [build-system]

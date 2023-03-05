@@ -1,0 +1,22 @@
+{
+  "dag": {
+    "dag_id": "{{cookiecutter.team}}_{{cookiecutter.monitoring_name}}",
+    "schedule_interval": "{{cookiecutter.schedule_interval}}",
+    "start_date": "{{cookiecutter.date}}",
+    "catchup": false,
+    "tags": [
+      "{{cookiecutter.team}}",
+      "{{cookiecutter.monitoring_name}}"
+    ],
+    "description": "A Dag created by {{cookiecutter.team}} - {{cookiecutter.monitoring_name}} monitoring."
+  },
+  "etl": {
+    "region": "us-west-2",
+    "s3_staging_dir": "s3://aws-athena-query-results-732179175681-us-west-2/",
+    "sqls": {
+      "mistplayetl.users": "SELECT uid, tue, email FROM mistplayetl.users limit 4"
+    }
+  },
+  "environment":{},
+  "ghost_mode": false
+}
