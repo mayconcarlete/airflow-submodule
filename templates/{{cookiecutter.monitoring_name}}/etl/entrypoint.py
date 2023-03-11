@@ -3,6 +3,9 @@ from pyathena.pandas.util import as_pandas
 from pyathena import connect
 from engine.common.utils import load_config_file_to_dict
 
+# Add support to  jinja
+# Add support to run locally with Minio
+
 def entrypoint(**kwargs) -> dict[str, pd.DataFrame]:
     configs = kwargs.get("configs")
     print(f'Available resources: {configs}')
