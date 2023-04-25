@@ -2,7 +2,7 @@
   "dag": {
     "dag_id": "{{cookiecutter.team}}_{{cookiecutter.monitoring_name}}",
     "schedule_interval": "{{cookiecutter.schedule_interval}}",
-    "start_date": "{{cookiecutter.date}}",
+    "start_date": "{{cookiecutter.start_date}}",
     "catchup": false,
     "tags": [
       "{{cookiecutter.team}}",

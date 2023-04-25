@@ -1,5 +1,6 @@
 {
   "team": "default_team",
   "monitoring_name": "default_name",
-  "schedule_interval": "@daily"
+  "schedule_interval": "@daily",
+  "start_date": "01/01/2023"
 }
