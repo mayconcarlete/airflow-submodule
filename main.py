@@ -7,9 +7,11 @@ class Menu:
 
     def print_menu(self) -> int:
         terminal_menu = TerminalMenu(self.options)
+
         terminal_sub_menu = TerminalMenu(self.options_two)
         menu_entry_index = terminal_menu.show()
-        if menu_entry_index == 1:
+
+        if menu_entry_index == 0:
             create_monitoring()
         return menu_entry_index
 
