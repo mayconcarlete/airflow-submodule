@@ -17,6 +17,5 @@
       "mistplayetl.users": "SELECT uid, tue, email FROM mistplayetl.users limit 4"
     }
   },
-  "environment":{},
-  "ghost_mode": false
+  "environment":{}
 }
