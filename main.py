@@ -1,8 +1,9 @@
 import sys
 from simple_term_menu import TerminalMenu
 from engine.monitoring_factory.monitoring_factory import create_monitoring
-from monitorings.ban_by_b_reason_20.etl.entrypoint import entrypoint
 from engine.common.utils import load_config_file_to_dict
+from monitorings.teste.etl.entrypoint import entrypoint
+
 class Menu:
     def __init__(self) -> None:
         self.options = ["Create Monitoring", "Run Moniroting"]
@@ -22,7 +23,7 @@ class Menu:
 if __name__ == "__main__":
     # menu = Menu()
     # menu.print_menu()
-    monitoring_name = "ban_by_b_reason_20"
+    monitoring_name = "teste"
     path = f'{sys.path[0]}/monitorings/{monitoring_name}/config.json'
     config = load_config_file_to_dict(path)
     print(config)
