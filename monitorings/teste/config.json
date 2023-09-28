@@ -1,0 +1,21 @@
+{
+  "dag": {
+    "dag_id": "teste_teste",
+    "schedule_interval": "@daily",
+    "start_date": "01/01/2023",
+    "catchup": false,
+    "tags": [
+      "teste",
+      "teste"
+    ],
+    "description": "A Dag created by teste - teste monitoring."
+  },
+  "etl": {
+    "region": "us-west-2",
+    "s3_staging_dir": "s3://aws-athena-query-results-732179175681-us-west-2/",
+    "sqls": {
+      "mistplayetl.users": "SELECT uid, tue, email FROM mistplayetl.users limit 4"
+    }
+  },
+  "environment":{}
+}
