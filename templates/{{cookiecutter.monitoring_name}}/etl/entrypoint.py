@@ -3,7 +3,7 @@ from loguru import logger
 import pandas as pd
 from pyathena.pandas.util import as_pandas
 from pyathena import connect
-from engine.common.utils import load_config_file_to_dict
+
 logger.add(sys.stderr, format="{time} {level} {message}", filter="my_module", level="INFO")
 
 # Add support to  jinja
@@ -23,9 +23,3 @@ def entrypoint(**kwargs) -> dict[str, pd.DataFrame]:
       etl_results[sql_table] = as_pandas(cursor=cursor)
       logger.info(etl_results.get(sql_table))
     return etl_results
-
-# if __name__ == "__main__":
-#     path = "/home/maycon/dev/airflow/airflow-submodule/templates/{{cookiecutter.monitoring_name}}/config.json"
-#     configs = load_config_file_to_dict(path)
-#     result = entrypoint(configs=configs)
-#     print(result)
