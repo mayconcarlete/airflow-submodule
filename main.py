@@ -1,7 +1,7 @@
 import sys
 from engine.menu.main import Menu
 from engine.monitoring_factory.monitoring_factory import create_monitoring
-from engine.dynamic_import.main import load_func_to_memory
+from engine.dynamic_import.main import load_function_to_memory
 from engine.utils.utils import parse_config_to_dict
 
 # class Menu:

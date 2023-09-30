@@ -24,15 +24,18 @@ class Menu:
       monitoring_menu = TerminalMenu(monitoring_options)
       monitoring_index = monitoring_menu.show()
 
-      monitoring_run_options = ["Using an existing ETL data","Run End to End(this option will create an etl)"]
+      monitoring_name = monitoring_options[monitoring_index]
+      monitoring_base_path = f'{sys.path[0]}/monitorings/{monitoring_name}'
+      monitoring_config_path = f'{monitoring_base_path}/config.json'
+      monitoring_etl_path = f'{monitoring_base_path}/etl/entrypoint.py'
+      monitoring_model_path = f'{monitoring_base_path}/model/model.py'
+
+      monitoring_run_options = ["Run only the ETL.","Run a model with an existing ETL.","Run End to End(this option will create an etl)."]
       run_options_choosed = TerminalMenu(monitoring_run_options).show()
       #  0 = will navigate through the existing ETL flow.
       if run_options_choosed == 0:
         pass
       # 1 Will navigate through the e2e flow.
-      # monitoring_name = monitoring_options[monitoring_index]
-      # path = f'{sys.path[0]}/monitorings/{monitoring_name}/config.json'
-      # path_to_etl = f'{sys.path[0]}/monitorings/{monitoring_name}/etl/entrypoint.py'
-      # config = parse_config_to_dict(path)
+
 
     return

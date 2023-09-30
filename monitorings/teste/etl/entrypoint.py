@@ -3,7 +3,7 @@ from loguru import logger
 import pandas as pd
 from pyathena.pandas.util import as_pandas
 from pyathena import connect
-from engine.common.utils import load_config_file_to_dict
+
 logger.add(sys.stderr, format="{time} {level} {message}", filter="my_module", level="INFO")
 
 

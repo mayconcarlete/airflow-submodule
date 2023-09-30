@@ -6,8 +6,7 @@ from pyathena import connect
 
 logger.add(sys.stderr, format="{time} {level} {message}", filter="my_module", level="INFO")
 
-# Add support to  jinja
-# Add support to run locally with Minio
+
 
 def entrypoint(**kwargs) -> dict[str, pd.DataFrame]:
     logger.info(f'Available resources: {kwargs}')
