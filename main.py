@@ -1,7 +1,6 @@
 import sys
 from engine.menu.main import Menu
 from engine.monitoring_factory.monitoring_factory import create_monitoring
-from monitorings import available_monitorings
 from engine.dynamic_import.main import load_func_to_memory
 from engine.utils.utils import parse_config_to_dict
 
@@ -23,12 +22,10 @@ from engine.utils.utils import parse_config_to_dict
 
 if __name__ == "__main__":
     menu = Menu()
-    menu.run()
+    result = menu.run()
     # menu.print_menu()
     # monitoring_name = "teste"
-    # path = f'{sys.path[0]}/monitorings/{monitoring_name}/config.json'
-    # path_to_etl = f'{sys.path[0]}/monitorings/{monitoring_name}/etl/entrypoint.py'
-    # config = parse_config_to_dict(path)
+
 
     # funcao = load_func_to_memory(path_to_etl, "entrypoint")
     # funcao(**config)
