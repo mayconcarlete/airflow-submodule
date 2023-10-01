@@ -16,6 +16,9 @@ def run_etl(monitoring_name: str) -> None:
 
     # dict[str, pd.DataFrame]
     data = etl_function(config)
+    data_to_dict = dict
+    for key, value in data.items():
+        data_to_dict[key]: value.to_dict()
 
     # save to CSV MONITORING_NAME_DATE
     date = datetime.datetime.now()
