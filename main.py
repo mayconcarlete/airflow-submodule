@@ -42,9 +42,9 @@ if __name__ == "__main__":
     }
 
     data2 = {
-  "calories3": [2420, 2380, 2390],
-  "duration3": [250, 240, 245]
-}
+        "calories3": [2420, 2380, 2390],
+        "duration3": [250, 240, 245]
+    }
 
     dataframe = pd.DataFrame(data)
     dataframe2 = pd.DataFrame(data2)
@@ -58,20 +58,20 @@ if __name__ == "__main__":
     data_to_dict = {}
 
     for key, values in results.items():
-        data_to_dict[key] = values.to_dict()
-
+        # data_to_dict[key] = values.to_dict()
+        values.to_csv(f'{key}.csv')
 
     # for key, value in data_to_dict.items():
         # print(key, value)
 
-    df_all = pd.DataFrame(data_to_dict)
-    df_all.to_csv("data.csv")
+    # df_all = pd.DataFrame(data_to_dict)
+    # df_all.to_csv("data.csv")
 
-    load_df = pd.read_csv("data.csv", index_col=0)
+    # load_df = pd.read_csv("data.csv", index_col=0)
 
-    new_dict = load_df.to_dict()
-    parseado = {}
-    for key, values in new_dict.items():
-        parseado[key] = pd.DataFrame(values, index=[0])
+    # new_dict = load_df.to_dict()
+    # parseado = {}
+    # for key, values in new_dict.items():
+    #     parseado[key] = pd.DataFrame(values, index=[0])
 
-    print(parseado["users"])
+    # print(parseado["users"])
