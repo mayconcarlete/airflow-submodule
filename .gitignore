@@ -1,3 +1,4 @@
+minio-data
 data
 src/logs/*
 # Byte-compiled / optimized / DLL files
