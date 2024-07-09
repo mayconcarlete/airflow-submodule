@@ -1,0 +1,11 @@
+version: "3"
+services:
+  menu:
+    tty: true
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+# para rodar o service em modo tty    
+# docker compose -f menu-compose.yaml run --rm menu
