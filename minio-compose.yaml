@@ -27,7 +27,7 @@ services:
       - postgresql
 
   minio:
-    user: 1000:1000
+    user: "${USER}:${GID}"
     image: minio/minio
     # restart: always
     ports:
