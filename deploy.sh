@@ -1,0 +1,1 @@
+echo "Solta a carta Tigrinho"
