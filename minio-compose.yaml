@@ -1,7 +1,8 @@
 version: "3"
 services:
   postgresql:
-    image: postgres:14-alpine
+    user: "${USER}:${GID}"
+    image: postgres:17-alpine
     restart: always
     shm_size: 128mb
     environment:
@@ -11,16 +12,16 @@ services:
     ports:
       - 5432:5432  
     volumes:
-      - ./data/postgresql/docker:/var/lib/postgresql/data
-      - ./data/postgresql/config/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
-      - ./data/postgresql/config/users_seed.sql:/docker-entrypoint-initdb.d/users_seed.sql
-      - ./data/postgresql/config/products_seed.sql:/docker-entrypoint-initdb.d/products_seed.sql
+      - postgresql:/var/lib/postgresql/data
   
   pg-admin:
+    user: "${USER}:${GID}"
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: "maycon.carlete@gmail.com"
-      PGADMIN_DEFAULT_PASSWORD: "123456"
+      PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
     ports:
       - 16543:80
     depends_on:
@@ -29,15 +30,18 @@ services:
   minio:
     user: "${USER}:${GID}"
     image: minio/minio
-    # restart: always
+    restart: always
     ports:
       - 9000:9000
       - 9001:9001
     volumes:
-      - ./data/minio/docker:/data
+      - minio:/data
     environment:
       MINIO_ROOT_USER: "admin"
       MINIO_ROOT_PASSWORD: "123456789"
       MINIO_ADDRESS: ":9000"
       MINIO_CONSOLE_ADDRESS: ":9001"
     command: minio server /data
+volumes:
+  postgresql:
+  minio:
