@@ -12,3 +12,4 @@ export AIRFLOW_HOME=~/airflow
 
 * Simple term menu
 * Minio
+* Cookie Cutters
