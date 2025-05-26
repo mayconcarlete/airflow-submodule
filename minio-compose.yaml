@@ -1,7 +1,5 @@
-version: "3"
 services:
   postgresql:
-    user: "${USER}:${GID}"
     image: postgres:17-alpine
     restart: always
     shm_size: 128mb
@@ -15,7 +13,6 @@ services:
       - postgresql:/var/lib/postgresql/data
   
   pg-admin:
-    user: "${USER}:${GID}"
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
@@ -28,7 +25,6 @@ services:
       - postgresql
 
   minio:
-    user: "${USER}:${GID}"
     image: minio/minio
     restart: always
     ports:
