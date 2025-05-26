@@ -9,3 +9,6 @@ export AIRFLOW_HOME=~/airflow
 ### Add support to  jinja
 ### Add support to run locally with Minio
 ### Add support to range dates
+
+* Simple term menu
+* Minio
