@@ -1,20 +1,12 @@
-[tool.poetry]
+[project]
 name = "airflow-submodule"
 version = "0.1.0"
-description = ""
-authors = ["Maycon Carlete <maycon.carlete@gmail.com>"]
+description = "Add your description here"
 readme = "README.md"
-packages = [{include = "airflow_submodule"}]
-
-[tool.poetry.dependencies]
-python = "^3.10"
-apache-airflow = "^2.5.1"
-cookiecutter = "^2.1.1"
-pandas = "^1.5.3"
-pyathena = "^2.23.0"
-simple-term-menu = "^1.6.1"
-
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires-python = ">=3.12"
+dependencies = [
+    "boto3>=1.38.23",
+    "cookiecutter>=2.6.0",
+    "pandas>=2.2.3",
+    "simple-term-menu>=1.6.6",
+]
